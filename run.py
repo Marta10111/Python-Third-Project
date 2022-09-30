@@ -43,7 +43,7 @@ score = 0
 Question one
 """
 print("What is the name of the camp where Jason Voorhees drowns in the Friday\
-the  13th series?")
+the 13th series?")
 answer_1 = input("a) Camp Eden Lake\nb) Camp Crystal Lake\nc) Camp Silver Lake\
 \nd) Camp Diamond Lake\n")
 if answer_1 == "b":
@@ -207,13 +207,13 @@ else:
     print("score:", score)
     print("\n")
 
-    """ 
-    Display final score at the end of quiz
-    """
-    if score <= 5:
-        print(f"You know nothing {NAME}! Your final score is {score} out of\
+""" 
+Display final score at the end of quiz
+"""
+if score <= 5:
+    print(f"You know nothing {NAME}! Your final score is {score} out of\
  10. Better luck next time.")
-        print("Take the quiz again to see if you can improve your score.\n")
-    elif score > 5:
-        print(f"Well done {NAME}! Your final score is {score} out of\
+    print("Take the quiz again to see if you can improve your score.\n")
+elif score > 5:
+    print(f"Well done {NAME}! Your final score is {score} out of\
  10. You are a true Horror Movie fan.")

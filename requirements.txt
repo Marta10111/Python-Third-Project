@@ -1,2 +1,2 @@
-pyfiglet
+pyfiglet==0.7
 termcolor

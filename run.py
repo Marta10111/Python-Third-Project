@@ -1,30 +1,38 @@
-from pyfiglet import Figlet
+import pyfiglet
 from termcolor import colored
 
-def start():
+
+def start_screen():
     """
     Game starts with quiz title. Gets user name, shows\
     instructions and ask user if he is ready to start the game    
     """
+    print(colored(pyfiglet.figlet_format('Horror\
+    Movie Quiz', font='poison'), 'red'))
+
+
+start_screen()
+
+NAME = input("Please type your name and hit the enter key:\n")
+while not NAME.strip():
+    print("Please enter your name to start\n")
+    NAME = input("Please type your name and hit the enter key")
+
+else:
+    print(f"Welcome to Horror Movie Quiz {NAME}!\n")
+    print("Take the quiz to test your knowledge of popular horror movies.\n")
+    print("There are 10 multiple choice questions.\n")
+    print("Select your answer by typing 'a', 'b', 'c' or 'd'.\n")
+    print("Good luck!\n")
     
-    f = Figlet(font='poison')
-    print(colored(f.renderText('Horror Movie Quiz'), 'red'))
-
-    global name
-    name = input("Please type your name and hit the enter key:\n")
-
-    while not name.strip():
-        print("Please enter your name to start\n")
-        name = input("Please type your name and hit the enter key")
-
-    else:
-        print(f"Welcome to Horror Movie Quiz {name}!\n")
-        print("Take the quiz to test your knowledge of popular horror movies.\n")
-        print(f"There are 10 multiple choice questions.\n")
-        print("Select your answer by typing 'a', 'b', 'c' or 'd'.\n")
-        print("Good luck!\n")
-
-start()
+  
+commence_quiz = input("Are you ready to start? y/n\n")
+if commence_quiz.lower() == "y":
+    print("Great!\n")
+elif commence_quiz.lower() == "n":
+    print("Type 'y' if you are ready to start\n")
+else:
+    print("Please type y or n\n")   
 
 """
 Defining score Variables
@@ -35,7 +43,7 @@ score = 0
 Question one
 """
 print("What is the name of the camp where Jason Voorhees drowns in the Friday\
-the 13th series?")
+the  13th series?")
 answer_1 = input("a) Camp Eden Lake\nb) Camp Crystal Lake\nc) Camp Silver Lake\
 \nd) Camp Diamond Lake\n")
 if answer_1 == "b":
@@ -119,9 +127,9 @@ else:
 """
 Question six
 """
-print("Who plays the role pf Jack Torrence in the movie 'The Shining'?")
+print("Who plays the role of Jack Torrence in the movie 'The Shining'?")
 answer_6 = input("a) Danny Lloyd\nb) Danny DeVito\nc) Scatman Crothers\nd)\
-Jack Nicholson\n")
+ Jack Nicholson\n")
 if answer_6 == "d":
     print("Answer:", answer_6)
     score = score + 1
@@ -186,7 +194,7 @@ else:
 Question ten
 """
 print("Which colours is Freddy Krueger's jumper?")
-answer_10 = input("a)Red and Green\nb) Blue and Green\nc) Yellow and Red\n\
+answer_10 = input("a) Red and Green\nb) Blue and Green\nc) Yellow and Red\n\
 d) Yellow and Green\n")
 if answer_10 == "a":
     print("Answer:", answer_10)
@@ -199,8 +207,13 @@ else:
     print("score:", score)
     print("\n")
 
-
-
-
-
-
+    """ 
+    Display final score at the end of quiz
+    """
+    if score <= 5:
+        print(f"You know nothing {NAME}! Your final score is {score} out of\
+ 10. Better luck next time.")
+        print("Take the quiz again to see if you can improve your score.\n")
+    elif score > 5:
+        print(f"Well done {NAME}! Your final score is {score} out of\
+ 10. You are a true Horror Movie fan.")

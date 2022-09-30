@@ -1,4 +1,4 @@
-import pyfiglet
+from pyfiglet import Figlet
 from termcolor import colored
 
 
@@ -7,8 +7,8 @@ def start_screen():
     Game starts with quiz title. Gets user name, shows\
     instructions and ask user if he is ready to start the game    
     """
-    print(colored(pyfiglet.figlet_format('Horror\
-    Movie Quiz', font='poison'), 'red'))
+    f = Figlet(font='slant')
+    print(colored(f.renderText('Horror Movie Quiz'), 'red'))
 
 
 start_screen()

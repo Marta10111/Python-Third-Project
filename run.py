@@ -3,11 +3,26 @@ from termcolor import colored
 
 def start():
     """
-    Game starts with message and options
+    Game starts with quiz title. Gets user name, shows\
+    instructions and ask user if he is ready to start the game    
     """
     
     f = Figlet(font='poison')
     print(colored(f.renderText('Horror Movie Quiz'), 'red'))
+
+    global name
+    name = input("Please type your name and hit the enter key:\n")
+
+    while not name.strip():
+        print("Please enter your name to start\n")
+        name = input("Please type your name and hit the enter key")
+
+    else:
+        print(f"Welcome to Horror Movie Quiz {name}!\n")
+        print("Take the quiz to test your knowledge of popular horror movies.\n")
+        print(f"There are 10 multiple choice questions.\n")
+        print("Select your answer by typing 'a', 'b', 'c' or 'd'.\n")
+        print("Good luck!\n")
 
 start()
 

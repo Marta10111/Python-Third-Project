@@ -7,16 +7,18 @@ def start_screen():
     Game starts with quiz title. Gets user name, shows\
     instructions and ask user if he is ready to start the game    
     """
-    f = Figlet(font='slant')
+    f = Figlet(font='big')
     print(colored(f.renderText('Horror Movie Quiz'), 'red'))
 
 
 start_screen()
 
 NAME = input("Please type your name and hit the enter key:\n")
+
 while not NAME.strip():
     print("Please enter your name to start\n")
-    NAME = input("Please type your name and hit the enter key")
+    
+    NAME = input("Please type your name and hit the enter key:\n")
 
 else:
     print(f"Welcome to Horror Movie Quiz {NAME}!\n")
@@ -24,20 +26,26 @@ else:
     print("There are 10 multiple choice questions.\n")
     print("Select your answer by typing 'a', 'b', 'c' or 'd'.\n")
     print("Good luck!\n")
+
+start_quiz = True
     
-  
-commence_quiz = input("Are you ready to start? y/n\n")
-if commence_quiz.lower() == "y":
-    print("Great!\n")
-elif commence_quiz.lower() == "n":
-    print("Type 'y' if you are ready to start\n")
-else:
-    print("Please type y or n\n")   
+while start_quiz:
+    commence_quiz = input("Are you ready to start? y/n\n")
+
+    if commence_quiz.lower() == "y":
+        print("Great!\n")
+        break
+    elif commence_quiz.lower() == "n":
+        print("Type 'y' if you are ready to start\n")
+    else:
+        print("Please type y or n\n")   
 
 """
 Defining score Variables
 """
+
 score = 0
+
 
 """
 Question one
@@ -46,6 +54,7 @@ print("What is the name of the camp where Jason Voorhees drowns in the Friday\
 the 13th series?")
 answer_1 = input("a) Camp Eden Lake\nb) Camp Crystal Lake\nc) Camp Silver Lake\
 \nd) Camp Diamond Lake\n")
+
 if answer_1 == "b":
     print("Answer:", answer_1)
     score = score + 1
@@ -207,6 +216,7 @@ else:
     print("score:", score)
     print("\n")
 
+
 """ 
 Display final score at the end of quiz
 """
@@ -217,3 +227,32 @@ if score <= 5:
 elif score > 5:
     print(f"Well done {NAME}! Your final score is {score} out of\
  10. You are a true Horror Movie fan.")
+
+
+def play_again():
+    """
+    Ask user if they want to play again. If yes- returns to the quiz\
+    start, if not quiz ends
+    """
+
+    restart_quiz = True
+
+    while restart_quiz:
+        response = input("Do you want to play again? y/n\n")
+        response = response.upper()
+
+        if response == "Y":
+            return True
+        elif response == "N":
+            return False
+        else:
+            print("Please type 'Y' if you want start again, or 'N'\
+            if you want to quit \n")
+
+
+while play_again():
+   run.start_quiz()
+    
+else:
+    print("The End\nThank you for playing")
+    print("click the 'RUN PROGRAM' button to reset the quiz")

@@ -36,7 +36,7 @@ quiz_questions = [
                 "D": "The Nun"},
      "correct_answer": "B"},
     {"question": "Who plays the role of Jack Torrence in the movie\
- 'The Shining'",
+ 'The Shining'?",
      "answer": {"A": "Danny Lloyd",
                 "B": "Danny DeVito",
                 "C": "Scatman Crothers",
@@ -190,7 +190,7 @@ def play_again():
             return False
         else:
             print("Please type 'Y' if you want start again, or 'N'\
-            if you want to quit \n")
+ if you want to quit \n")
 
 
 start_screen()

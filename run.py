@@ -94,15 +94,13 @@ _   _                                 ___  ___              _
 
 start_screen()
 
-NAME = input("Please type your name and hit the enter key:\n")
+name = input("Please type your Name and hit the enter key:\n")
 
-while not NAME.strip():
-    print("Please enter your name to start\n")
-
-    NAME = input("Please type your name and hit the enter key:\n")
-
+while not name.strip():
+    print("Please enter your Name to start\n")
+    name = input("Please type your Name and hit the enter key:\n")
 else:
-    print(f"Welcome to Horror Movie Quiz {NAME}!\n")
+    print(f"Welcome to Horror Movie Quiz {name}!\n")
     print("Take the quiz to test your knowledge of popular horror movies.\n")
     print("There are 10 multiple choice questions.\n")
     print("Select your answer by typing 'a', 'b', 'c' or 'd'.\n")

@@ -154,11 +154,11 @@ def final_score(score):
     Display final score at the end of quiz
     """
     if score <= 5:
-        print(f"You know nothing {NAME}! Your final score is {score} out of\
+        print(f"You know nothing {name}! Your final score is {score} out of\
  10. Better luck next time.")
         print("Take the quiz again to see if you can improve your score.\n")
     elif score > 5:
-        print(f"Well done {NAME}! Your final score is {score} out of\
+        print(f"Well done {name}! Your final score is {score} out of\
  10. You are a true Horror Movie fan.")
 
 

@@ -1,5 +1,79 @@
-from pyfiglet import Figlet
-from termcolor import colored
+import colorama
+from colorama import Fore, Style
+colorama.init(autoreset=True)
+
+quiz_questions = [
+    {"question": "What is the name of the camp where Jason Voorhees drowns in the Friday\
+the 13th series?",
+    "answer": {"A": "Camp Eden Lake",
+               "B": "Camp Crystal Lake",
+               "C": "Camp Silver Lake",
+               "D": "Camp Diamond Lake"},
+    "correct_answer": "B"},
+    {"question": "In which film did Annabelle the doll make her debut?",
+    "answer": {"A": "Annabelle",
+               "B": "The Nun",
+               "C": "The Conjuring",
+               "D": "Annabelle Comes Home"},
+    "correct_answer": "C"},
+     {"question": "What is the Exorcist's Demon's Name?",
+    "answer": {"A": "Pazuzu",
+               "B": "Azazel",
+               "C": "Mammon",
+               "D": "Lucifer"},
+    "correct_answer": "A"},
+     {"question": "What arms does Leatherface prefer?",
+    "answer": {"A": "Machete",
+               "B": "Kitchen knife",
+               "C": "The Axe",
+               "D": "Chainsaw"},
+    "correct_answer": "D"},
+     {"question": "In which horror movie does the phrase 'the power of Christ compels you'\
+, appears?",
+    "answer": {"A": "The Conjuring",
+               "B": "The Exorcist",
+               "C": "The Omen",
+               "D": "The Nun"},
+    "correct_answer": "B"},
+     {"question": "Who plays the role of Jack Torrence in the movie 'The Shining'",
+    "answer": {"A": "Danny Lloyd",
+               "B": "Danny DeVito",
+               "C": "Scatman Crothers",
+               "D": "Jack Nicholson"},
+    "correct_answer": "D"},
+    {"question": "Which of the following movies is not based on a Stephen King novel?",
+    "answer": {"A": "The Orphan",
+               "B": "IT",
+               "C": "Doctor Sleep",
+               "D": "Pet Sematary"},
+    "correct_answer": "A"},
+    {"question": "What is the occupation of Hannibal Lecter in the movie 'The Silence of\
+the Lambs?",
+    "answer": {"A": "A Vet",
+               "B": "A Psychiatrist",
+               "C": "A Tailor",
+               "D": "A Teacher"},
+    "correct_answer": "B"},
+     {"question": "Who rides around on a red tricycle?",
+    "answer": {"A": "Chucky",
+               "B": "IT",
+               "C": "Annabelle",
+               "D": "Jigsaw"},
+    "correct_answer": "D"},
+     {"question": "Which colours is Freddy Krueger's jumper?",
+    "answer": {"A": "Red and Green",
+               "B": "Green and Blue",
+               "C": "Blue and Red",
+               "D": "Red and Yellow"},
+    "correct_answer": "A"},
+]
+
+def count_score(quiz_questions):
+    """
+    Counts correct and incorrect answers
+    """
+    score = 0
+    score  = score + 1
 
 
 def start_screen():
@@ -7,8 +81,20 @@ def start_screen():
     Game starts with quiz title. Gets user name, shows\
     instructions and ask user if he is ready to start the game    
     """
-    f = Figlet(font='big')
-    print(colored(f.renderText('Horror Movie Quiz'), 'red'))
+    print(f"""{Fore.RED}{Style.BRIGHT}
+_   _                                 ___  ___              _             
+| | | |                                |  \/  |             (_)            
+| |_| |  ___   _ __  _ __  ___   _ __  | .  . |  ___ __   __ _   ___  ___  
+|  _  | / _ \ | '__|| '__|/ _ \ | '__| | |\/| | / _ \\ \ / /| | / _ \/ __| 
+| | | || (_) || |   | |  | (_) || |    | |  | || (_) |\ V / | ||  __/\__ \ 
+\_| |_/ \___/ |_|   |_|   \___/ |_|    \_|  |_/ \___/  \_/  |_| \___||___/ 
+                          _____         _                                  
+                         |  _  |       (_)                                 
+                         | | | | _   _  _  ____                            
+                         | | | || | | || ||_  /                            
+                         \ \/' /| |_| || | / /                             
+                          \_/\_\ \__,_||_|/___|      
+""")
 
 
 start_screen()
@@ -17,7 +103,7 @@ NAME = input("Please type your name and hit the enter key:\n")
 
 while not NAME.strip():
     print("Please enter your name to start\n")
-    
+
     NAME = input("Please type your name and hit the enter key:\n")
 
 else:
@@ -28,7 +114,7 @@ else:
     print("Good luck!\n")
 
 start_quiz = True
-    
+
 while start_quiz:
     commence_quiz = input("Are you ready to start? y/n\n")
 
@@ -38,18 +124,24 @@ while start_quiz:
     elif commence_quiz.lower() == "n":
         print("Type 'y' if you are ready to start\n")
     else:
-        print("Please type y or n\n")   
+        print("Please type y or n\n")
+
+
+
+
+
 
 """
 Defining score Variables
 """
-
 score = 0
 
+def play_game():
 
 """
 Question one
 """
+
 print("What is the name of the camp where Jason Voorhees drowns in the Friday\
 the 13th series?")
 answer_1 = input("a) Camp Eden Lake\nb) Camp Crystal Lake\nc) Camp Silver Lake\
@@ -69,7 +161,7 @@ else:
 """
 Question two
 """
-print("In which film did Annabelle the doll make her debut?")
+print()
 answer_2 = input("a) Annabelle\nb) The Nun\nc) The Conjuring\nd) Annabelle\
 Comes Home\n")
 if answer_2 == "c":
@@ -118,8 +210,7 @@ else:
 """
 Question five
 """
-print("In which horror movie does the phrase 'the power of Christ compels you'\
-, appears?")
+print("")
 answer_5 = input("a) The Conjuring\nb) The Exorcist\nc) The Omen\nd) The Nun\
 \n")
 if answer_5 == "b":
@@ -135,8 +226,7 @@ else:
 
 """
 Question six
-"""
-print("Who plays the role of Jack Torrence in the movie 'The Shining'?")
+print("?")
 answer_6 = input("a) Danny Lloyd\nb) Danny DeVito\nc) Scatman Crothers\nd)\
  Jack Nicholson\n")
 if answer_6 == "d":
@@ -153,7 +243,7 @@ else:
 """
 Question seven
 """
-print("Which of the following movies is not based on a Stephen King novel?")
+print("")
 answer_7 = input("a) The Orphan\nb) IT\nc) Doctor Sleep\nd) Pet Sematary\n")
 if answer_7 == "a":
     print("Answer:", answer_7)
@@ -169,8 +259,7 @@ else:
 """
 Question eight
 """
-print("What is the occupation of Hannibal Lecter in the movie 'The Silence of\
-the Lambs?")
+print("?")
 answer_8 = input("a) A Vet\nb) A Psychiatrist\nc) A Tailor\nd) A Teacher\n")
 if answer_8 == "b":
     print("Answer:", answer_8)
@@ -235,24 +324,25 @@ def play_again():
     start, if not quiz ends
     """
 
-    restart_quiz = True
 
-    while restart_quiz:
-        response = input("Do you want to play again? y/n\n")
-        response = response.upper()
+restart_quiz = True
 
-        if response == "Y":
-            return True
-        elif response == "N":
-            return False
-        else:
-            print("Please type 'Y' if you want start again, or 'N'\
+while restart_quiz:
+    response = input("Do you want to play again? y/n\n")
+    response = response.upper()
+
+    if response == "Y":
+        return True
+    elif response == "N":
+        return False
+    else:
+        print("Please type 'Y' if you want start again, or 'N'\
             if you want to quit \n")
 
 
 while play_again():
-   run.start_quiz()
-    
+    play_game()
+
 else:
     print("The End\nThank you for playing")
     print("click the 'RUN PROGRAM' button to reset the quiz")

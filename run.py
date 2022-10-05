@@ -49,7 +49,7 @@ quiz_questions = [
                 "C": "Doctor Sleep",
                 "D": "Pet Sematary"},
      "correct_answer": "A"},
-    {"question": "What is the occupation of Hannibal Lecter in the movie 'The\
+    {"question": "What is the occupation of Hannibal Lecter in the movie\n'The\
  Silence of the Lambs?",
      "answer": {"A": "A Vet",
                 "B": "A Psychiatrist",

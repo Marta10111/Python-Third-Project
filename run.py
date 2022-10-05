@@ -151,10 +151,10 @@ def run_game(quiz_questions):
                 print("Only a, b, c or d are accepted\n")
 
         if user_answer == entry['correct_answer']:
-            print(f"{Fore.GREEN}You're right\n")
+            print(f"{Fore.GREEN}You're right!\n")
             score += 1
         else:
-            print(f"{Fore.RED}You're wrong\n")
+            print(f"{Fore.RED}You're wrong!\n")
 
     final_score(score)
 
@@ -163,11 +163,11 @@ def final_score(score):
     """
     Display final score at the end of quiz
     """
-    if score <= 5:
+    if score <= 6:
         print(f"You know nothing {name}! Your final score is {score} out of\
  10. Better luck next time.")
         print("Take the quiz again to see if you can improve your score.\n")
-    elif score > 5:
+    elif score > 6:
         print(f"Well done {name}! Your final score is {score} out of\
  10. You are a true Horror Movie fan.")
 
@@ -203,4 +203,3 @@ while play_again():
 else:
     print("The End\nThank you for playing")
     print("click the 'RUN PROGRAM' button to reset the quiz")
-    

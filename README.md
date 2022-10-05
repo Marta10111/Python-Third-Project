@@ -131,7 +131,84 @@ In these program dictionary was used to store quiz questions and answers. That w
 
 # Testing
 
-## Manyal Testing
+## Manual Testing
+I made following manual tests throughout the deployment process:
+- Given invalid input at each input stage to check invalid data is dealt with in the way I expected.
+- Checked f-Strings to ensure that output data is updated automatically and remains accurate, particularly if questions are added to the dictionary. 
+- Tested in my local terminal and the deployed Heroku terminal. 
+- Asked friends to play the game and ask if the instructions are easy to follow.
+
+## Validator Testing
+I ran my code through PEP8 validator which I added to my Gitpod workspace, as PEP8 website was not availble. One issue was finde with Trailing whitespace in several lines. 
+
+![PEP8 before](https://user-images.githubusercontent.com/106401395/194099428-a03730a3-17f0-4701-96e1-747c6092db5f.jpg)
+
+Problem fixed.
+
+![PEP8](https://user-images.githubusercontent.com/106401395/194097634-868336ee-d6a7-4ab9-96bb-4b3e26075096.jpg)
+
+Some gitpod.yml issues was detected. Not fixed.
+
+## Accessibility Test
+
+Test accessibility and performance with Ligthouse.
+
+![Lighthouse](https://user-images.githubusercontent.com/106401395/194100762-5aaa5484-da51-453f-b7bc-ac67aa62ea13.jpg)
+
+# Bugs
+
+## Remaining
+
+- Exception has occured: EOFError in line 97
+
+## Solved 
+
+- When I first ran the code through the PEP8, it informed me that some of the code lines in the dictionary were too long. This was also causing some individual words to break in the middle and displaying incorrectly in the terminal. I fixed this by inserting a back slash at the line length limit point and putting all characters after the back slash onto a new line. I had to position the new line carefully so that the questions would still display in the terminal without additional whitespace. Broken words were fixed by using a new line character. 
+- On first session witch my mentor She noticed that when she wanted to start the quiz no input was needed(yes or no) as enter tab started the game. I fixed that issue adding if else statement.
+
+# Resources Used
+
+- <a href="http://ami.responsivedesign.is/#">Am I Responsive</a>
+- <a href="https://pypi.org/project/colorama/">Colorama</a>
+- <a href="https://www.lucidchart.com/pages/">Lucidchart</a>
+- <a href="https://www.coolgenerator.com/ascii-text-generator">ASCII Text Generator</a>
+
+# Deployment
+
+My project was deployed via <a href="https://heroku.com">Heroku</a> app using Code Institute video <a href="https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/?child=last">Deployment Video</a>, with following steps:
+
+1. In Heroku account, go to Dashboard and click ‘Create New App’. Give the app a unique name and select region (Europe).
+2. Click ‘Create App’(give project unique name).
+3. Click 'Settings', select Config Var, type PORT in key section and 8000 in value section.
+4. Click ‘Add Buildpack’, select Python and click ‘Save Changes’.
+5. Then select ‘NodeJS’ and click save again. IMPORTANT - Buildpacks should be in order. Python on top of NodeJS.
+6. Click on ‘Deploy’ tab.
+7. Select ‘GitHub' as deployment method. 
+8. Search for repo name and connect.
+9. Click ‘Enable Automatic Deploys’.
+10. Ensure that ‘main’ branch is selected in Manual deploy section and click ‘Deploy Branch’.
+11. Once deployed, click ‘view’ to access deployed project.  
+
+# Credits
+
+## Content
+
+Questions for quiz was taken from:
+
+- <a href="https://icebreakerideas.com/horror-movie-trivia/">Horror Movie Trivia</a>
+- <a href="https://www.quiztriviagames.com/horror-movie-quiz/">Quiz Trivia Games</a>
+
+## Acknowledgement
+
+- I used Sean Quirke and Ollie Train_5P projects to get idea how I want my project to look like.
+- I used Mohammad Hashemi answer on programing portal to fix Trim Trailing Whitespace issue.
+- I get help from classmate Ivette McDermott with title fancy fonts. She suggested to me, to use ASCII text validator to get result which I was looked for.
+- Love Sandwiches project for reference and guidance.
+- I used You Tube video to get idea how to start my project <a href="https://www.youtube.com/watch?v=yriw5Zh406s&list=WL&index=68&t=40s">Bro Code</a>
+- Martina Terlevic (mentor) 
+
+
+
 
 
 

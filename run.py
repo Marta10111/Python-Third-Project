@@ -4,7 +4,7 @@ colorama.init(autoreset=True)
 
 quiz_questions = [
     {"question": "What is the name of the camp where Jason Voorhees drowns\
- in the Friday the 13th series?",
+ in the Friday the\n13th series?",
      "answer": {"A": "Camp Eden Lake",
                 "B": "Camp Crystal Lake",
                 "C": "Camp Silver Lake",
@@ -29,7 +29,7 @@ quiz_questions = [
                 "D": "Chainsaw"},
      "correct_answer": "D"},
     {"question": "In which horror movie does the phrase 'the power of Christ\
- compels you', appears?",
+ compels you',\nappears?",
      "answer": {"A": "The Conjuring",
                 "B": "The Exorcist",
                 "C": "The Omen",
